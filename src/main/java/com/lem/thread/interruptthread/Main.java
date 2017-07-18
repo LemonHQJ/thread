@@ -67,7 +67,12 @@ public class Main {
 		}
 	}
 	
-	//测试中断后，继续运行for后的语句
+
+	/**
+	 * 异常停止
+	 * 目的：测试中断后，是否继续运行for后的语句
+	 * 结果：继续运行for后面的语句
+	 */
 	public static void demo5(){
 		try {
 			MyThread1 mt = new MyThread1();
@@ -79,7 +84,11 @@ public class Main {
 		}
 	}
 	
-//	测试run方法for抛出异常，运行顺序
+	/**
+	 * 异常停止
+	 * 目的：测试run方法for抛出异常的运行顺序
+	 * 结果：忽略throw后面的动作；进入catch
+	 */
 	public static void demo6(){
 		try {
 			MyThread1 mt = new MyThread1();
