@@ -10,7 +10,7 @@ public class TestThread extends Thread{
 	        System.out.println( "Interrupting thread..." ); 
 	        thread.interrupt(); 
 	        System.out.println("线程是否中断：" + thread.isInterrupted()); 
-	        System.out.println("线程是否中断：" + thread.interrupted()); 
+	        System.out.println("线程是否中断：" + thread.isInterrupted()); 
 	        Thread.sleep( 3000 ); 
 	        System.out.println("Stopping application..." ); 
 	    } 

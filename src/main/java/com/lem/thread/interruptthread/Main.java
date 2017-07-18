@@ -6,8 +6,11 @@ public class Main {
 	public static void main(String[] args) {
 //		demo1();
 //		demo2();
-		demo3();
+//		demo3();
+//		demo4();
+		demo5();
 	}
+	
 	
 	public static void demo1(){
 		try {
@@ -27,7 +30,7 @@ public class Main {
 		try {
 			MyThread mt = new MyThread();
 			mt.start();
-			Thread.sleep(100);//  设置时间很长有可能:运行完run->Thread.currentThread().getName()->中断1 ->中断2
+			Thread.sleep(2000);//  设置时间很长有可能:运行完run->Thread.currentThread().getName()->中断1 ->中断2
 //			System.out.println("是否中断1		" + mt.isInterrupted());//true  MyThread 对象是被中断
 			Thread.currentThread().interrupt();//中断当前主线程
 			System.out.println("是否中断1		" + mt.interrupted());// true ;判断当前主线程是否中断
@@ -37,17 +40,55 @@ public class Main {
 		}
 	}
 	
-
+	/**
+	 * TODO
+	 */
 	public static void demo3(){
+//		try {
+//			MyThread mt = new MyThread();
+//			mt.start();
+//			Thread.sleep(3000);
+//			mt.interrupt();
+//			System.out.println("是否中断1		" + mt.isInterrupted());// demo1/2 	下false ;demo3下true   运行后不清除状态
+//			System.out.println("是否中断2		" + mt.isInterrupted());// demo1/2     下false ;demo3下true
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+	}
+	
+	public static void demo4(){
 		try {
 			MyThread mt = new MyThread();
 			mt.start();
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			mt.interrupt();
-			System.out.println("是否中断1		" + mt.isInterrupted());// 
-			System.out.println("是否中断2		" + mt.isInterrupted()); // 
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	//测试中断后，继续运行for后的语句
+	public static void demo5(){
+		try {
+			MyThread1 mt = new MyThread1();
+			mt.start();
+			Thread.sleep(3000);
+			mt.interrupt();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+//	测试run方法for抛出异常，运行顺序
+	public static void demo6(){
+		try {
+			MyThread1 mt = new MyThread1();
+			mt.start();
+			Thread.sleep(3000);
+			mt.interrupt();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
