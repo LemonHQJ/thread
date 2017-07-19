@@ -1,4 +1,4 @@
-package com.lem.thread.stopThrowLock;
+package com.lem.thread.stop_throw_lock;
 
 public class MyThread extends Thread {
 	private SynchronizedObject object;

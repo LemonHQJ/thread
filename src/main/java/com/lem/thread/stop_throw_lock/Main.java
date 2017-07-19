@@ -1,4 +1,4 @@
-package com.lem.thread.stopThrowLock;
+package com.lem.thread.stop_throw_lock;
 
 public class Main {
 	public static void main(String[] args) {
