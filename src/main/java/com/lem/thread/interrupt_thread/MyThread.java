@@ -1,4 +1,4 @@
-package com.lem.thread.interruptthread;
+package com.lem.thread.interrupt_thread;
 
 public class MyThread extends Thread{
 //	private boolean stop =false;

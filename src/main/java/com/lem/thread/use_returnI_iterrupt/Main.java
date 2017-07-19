@@ -1,4 +1,4 @@
-package com.lem.thread.useReturnInterrupt;
+package com.lem.thread.use_returnI_iterrupt;
 
 public class Main {
 

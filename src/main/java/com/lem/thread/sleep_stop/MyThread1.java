@@ -1,4 +1,4 @@
-package com.lem.thread.sleepstop;
+package com.lem.thread.sleep_stop;
 
 public class MyThread1 extends Thread {
 	

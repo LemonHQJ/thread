@@ -1,4 +1,4 @@
-package com.lem.thread.interruptthread;
+package com.lem.thread.interrupt_thread;
 
 public class MyThread1 extends Thread{
 	

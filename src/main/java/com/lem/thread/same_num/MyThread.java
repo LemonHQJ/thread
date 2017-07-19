@@ -1,4 +1,4 @@
-package com.lem.thread.sameNum;
+package com.lem.thread.same_num;
 
 public class MyThread extends Thread{
 	
