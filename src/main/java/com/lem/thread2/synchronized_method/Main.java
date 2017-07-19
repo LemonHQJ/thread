@@ -10,7 +10,9 @@ public class Main {
 //		demo4();
 //		demo5();
 //		demo6();
-		demo7();
+//		demo7();
+//		demo8();
+		demo9();
 	}
 	
 	
@@ -165,10 +167,47 @@ public class Main {
 		mt1.start();
 		
 //		结果
-//		begin methodB Thread.name b
-//		end method 
 //		begin methodB Thread.name a
 //		end method 
+//		begin methodB Thread.name b
+//		end method 
 
+	}
+	
+	/**
+	 * 目的：测试脏数据
+	 * 
+	 */
+	public static void demo9(){
+		try {
+			PublicVar pv = new PublicVar();
+			MyThread7 mt = new MyThread7(pv);
+			MyThread6 mt1 = new MyThread6(pv);
+			mt1.start();
+			mt.start();
+			Thread.sleep(10);
+			System.out.println(pv.getPassword()+"~~~~~~~~~~~"+pv.getName());
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+//		结果
+//		mt1.start()
+//		AA~~~~~~~~~~~B
+//		name=  B    password=  BB
+//		||(或者)
+//		mt.start()
+//		AA~~~~~~~~~~~B
+//		name=  B    password=  BB
+		
+		
+//		后期
+//		测试两个线程调用同一个对象的两个不同的同步锁方法：排队执行：这时候getValue将不会出现脏数据
+//		mt1.start()与mt.start()同时调用
+//		setValue 1500459110844
+//		AA~~~~~~~~~~~A
+//		setValue name=  B    password=  BB   Time1500459160854
+//		getValue 1500459160856
+//		getValue  name=  B    password=  BB   Time1500459160856
 	}
 }
