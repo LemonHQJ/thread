@@ -1,10 +1,10 @@
 package com.lem.thread2.synchronized_method;
 
-public class HasSelfPrvateNum1 {
+public class HasSelfPrvateNum2 {
 	
 	private int num = 0;
 	
-	public void addI(String username){
+	synchronized public void addI(String username){
 		try {
 			if("a".equals(username)){
 				num = 100;
