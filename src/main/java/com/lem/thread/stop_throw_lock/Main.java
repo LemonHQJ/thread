@@ -17,7 +17,7 @@ public class Main {
 			MyThread thread = new MyThread(object);
 			thread.start();
 			Thread.sleep(5000);
-			thread.stop();
+//			thread.stop();
 			System.out.println(object.getUsername()+"	"+ object.getPassword());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

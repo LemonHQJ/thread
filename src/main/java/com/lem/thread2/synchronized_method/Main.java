@@ -6,13 +6,13 @@ public class Main {
 //	关键字synchronized取得的锁都是对象锁，并不是把一段代码当做锁，在多线程一个对象中，谁先执行synchronized方法，谁就持有所属对象锁，那么其余线程呈现等待状态
 	public static void main(String[] args) {
 //		demo2();
-//		demo3();
+		demo3();
 //		demo4();
 //		demo5();
 //		demo6();
 //		demo7();
 //		demo8();
-		demo9();
+//		demo9();
 	}
 	
 	
