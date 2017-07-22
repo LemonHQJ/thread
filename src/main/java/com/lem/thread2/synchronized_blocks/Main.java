@@ -5,7 +5,8 @@ public class Main {
 	public static void main(String[] args) {
 //		demo1();
 //		demo1_();
-		demo3();
+//		demo3();
+		demo4();
 	}
 	
 	/**
@@ -85,27 +86,27 @@ public class Main {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/**
+	 * synchronized代码块间的同步性
+	 * 其他线程对同一个object中其他synchronized(this)同步代码块(??synchronized方法??)被堵塞
+	 * synchronized使用的对象监视器是一个
+	 * (synchronized代码块锁定当前对象)
+	 */
+	public static void demo4(){
+		ObjectService os = new ObjectService();
+		MyThreadC mta = new MyThreadC(os);
+		MyThreadD mtb = new MyThreadD(os);
+		mta.start();
+		mtb.start();
+		
+		
+//		同步
+//		Thread-1　begin time = 1500708355460
+//		Thread-1 end	  time = 1500708356460
+//		Thread-0　begin time = 1500708356460
+//		Thread-0 end	  time = 1500708357461
+
+	}
 	
 	
 	

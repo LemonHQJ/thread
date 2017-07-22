@@ -1,4 +1,4 @@
-package com.lem.thread2.synchronized_method_reentrantlock;
+package com.lem.thread2.syn_method_reentrantlock;
 
 public class Service {
 

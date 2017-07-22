@@ -1,6 +1,6 @@
 package com.lem.thread2.synchronized_method;
 
-import cn.joy.framework.kits.StringKit;
+//import cn.joy.framework.kits.StringKit;
 
 public class MyThread extends Thread {
 

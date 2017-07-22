@@ -1,4 +1,4 @@
-package com.lem.thread2.synchronized_mth.syn_not_ext;
+package com.lem.thread2.syn_method_syn_not_ext;
 
 public class FF {
 
