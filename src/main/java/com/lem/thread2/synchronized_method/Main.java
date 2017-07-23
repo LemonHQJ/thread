@@ -69,10 +69,12 @@ public class Main {
 		MyThread1 mt1 = new MyThread1(hs);
 		MyThread1 mt2 = new MyThread1(hs);
 		MyThread mt3 = new MyThread(hs);
+		MyThread mt4 = new MyThread(hs);
 		mt.start();
 		mt1.start();
 		mt2.start();
 		mt3.start();
+		mt4.start();
 	}
 	
 	/**
