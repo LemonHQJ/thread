@@ -1,7 +1,6 @@
-package com.lem.thread2.syn_blocks_object_monitor;
+package com.lem.thread2.syn_blocks_monitor;
 
 public class MyThread1 extends Thread{
-
 private Service ser;
 	
 	
