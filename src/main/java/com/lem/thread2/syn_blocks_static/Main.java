@@ -5,7 +5,8 @@ public class Main {
 
 	
 	public static void main(String[] args) throws InterruptedException{
-		demo1();
+//		demo1();
+		demo2();
 	}
 	
 	/**
@@ -36,12 +37,28 @@ public class Main {
 //		synchronized XXX static	与synchronized(XX.class)相同
 
 	}
-
 	
 	/**
-	 * String的常量池特性
+	 * 结果：同步
 	 */
 	public static void demo2(){
+		final MyObject mo = new MyObject();
+		final Service ser = new Service();
+		Thread t1 = new Thread(){
+			public void run(){
+				ser.method(mo);
+			}
+		};
 		
+		Thread t2 = new Thread(){
+			public void run(){
+				mo.method();
+			}
+		};
+		t1.setName("T1");
+		t2.setName("T2");
+		t1.start();
+		t2.start();
 	}
+
 }
