@@ -11,7 +11,18 @@ public class Main {
 //		demo3();
 //		共享同步
 //		demo4();
+		
+		demo();
 	}
+	
+	public static void demo(){
+		Service s = new Service();
+		MyThreadA mta = new MyThreadA(s);
+		MyThreadB mtb = new MyThreadB(s);
+		mta.start();
+		mtb.start();
+	}
+	
 	
 	//不共享
 	public static void demo1(){
