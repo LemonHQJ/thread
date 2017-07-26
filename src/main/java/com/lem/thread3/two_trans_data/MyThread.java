@@ -1,13 +1,15 @@
 package com.lem.thread3.two_trans_data;
 
+import com.lem.thread3.MyList;
+
 public class MyThread extends Thread {
 
 	private MyList list;
-	
-	public MyThread(MyList list){
+
+	public MyThread(MyList list) {
 		this.list = list;
 	}
-	
+
 	@Override
 	public void run() {
 		super.run();
@@ -21,5 +23,5 @@ public class MyThread extends Thread {
 			e.printStackTrace();
 		}
 	}
-	
+
 }

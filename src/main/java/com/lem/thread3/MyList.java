@@ -1,4 +1,4 @@
-package com.lem.thread3.two_trans_data;
+package com.lem.thread3;
 
 import java.util.ArrayList;
 import java.util.List;
