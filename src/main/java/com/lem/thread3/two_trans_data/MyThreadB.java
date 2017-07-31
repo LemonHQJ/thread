@@ -13,20 +13,21 @@ public class MyThreadB extends Thread {
 	@Override
 	public void run() {
 		super.run();
-		try {
-			while (true) {
-				String a = new String();
-				synchronized (a) {
-
-				}
-				if (list.size() == 5) {
+		synchronized (list) {
+			try {
+//			while (true) {
+				System.out.println("~~~~~~~~");
+//				if (list.size() == 5) {
+				if (list.size() != 5) {
 					System.out.println("退出线程B");
+					list.wait();
 					throw new InterruptedException();
 				}
+//			}
+			} catch (InterruptedException e) {
+				System.out.println("InterruptedException");
+				e.printStackTrace();
 			}
-		} catch (InterruptedException e) {
-			System.out.println("InterruptedException");
-			e.printStackTrace();
 		}
 
 	}

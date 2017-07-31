@@ -14,10 +14,16 @@ public class MyThread extends Thread {
 	public void run() {
 		super.run();
 		try {
-			for (int i = 0; i < 10; i++) {
-				list.add();
-				System.out.println("run----------" + i);
-				Thread.sleep(1000);
+			synchronized (list) {
+				for (int i = 0; i < 10; i++) {
+					list.add();
+					System.out.println("run----------" + i);
+					if(list.size() == 5){
+						System.out.println("唤醒");
+						list.notify();
+					}
+					Thread.sleep(1000);
+				}
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
