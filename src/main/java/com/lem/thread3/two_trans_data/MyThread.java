@@ -21,6 +21,7 @@ public class MyThread extends Thread {
 					if(list.size() == 5){
 						System.out.println("唤醒");
 						list.notify();
+						System.out.println("唤醒end");
 					}
 					Thread.sleep(1000);
 				}
