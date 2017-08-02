@@ -11,7 +11,20 @@ public class Service {
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-			Map
 		}
 	}
+	
+	public void testNotifyMethod1(Object lock){
+		try {
+			synchronized (lock) {
+				System.out.println(Thread.currentThread().getName() + "begin Notify()");
+				lock.notify();
+				Thread.sleep(10000);
+				System.out.println(Thread.currentThread().getName() + "	end Notify()");
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
