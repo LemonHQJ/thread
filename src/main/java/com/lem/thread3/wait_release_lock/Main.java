@@ -5,7 +5,8 @@ public class Main {
 //		demo1();
 //		demo2();
 //		demo3();
-		demo4();
+//		demo4();
+		demo5();
 	}
 
 	
@@ -60,5 +61,32 @@ public class Main {
 		
 //	    begin notify
 //	    begin wait
+	}
+
+	/**
+	 * wait条件发生变化
+	 * @throws InterruptedException
+	 */
+	public static void demo5() throws InterruptedException {
+		String lock = new String("");
+		Add add = new Add(lock);
+		Subtract sub = new Subtract(lock);
+		ThreadSubtract subt = new ThreadSubtract(sub);
+		subt.start();
+		subt.setName("subt");
+		ThreadSubtract subt2 = new ThreadSubtract(sub); 
+		subt2.setName("subt2");
+		subt2.start();
+		Thread.sleep(1000);
+		ThreadAdd addt = new ThreadAdd(add);
+		addt.setName("addt");
+		addt.start();
+		
+//		 wait begin ThreadName=subt
+//		 wait begin ThreadName=subt2
+//		 wait end ThreadName=subt2
+//		 wait end ThreadName=subt
+//		 list size= 0
+//		 java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
 	}
 }
