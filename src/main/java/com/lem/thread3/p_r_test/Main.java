@@ -3,9 +3,15 @@ package com.lem.thread3.p_r_test;
 public class Main {
 
 	public static void main(String[] args) {
-		demo1();
+//		demo1();
+		demo2();
 	}
 	
+	
+	/**
+	 * 单生产/单消费
+	 * 正常运行
+	 */
 	public static void demo1(){
 		String str = new String("");
 		C c = new C(str);
@@ -18,4 +24,11 @@ public class Main {
 		ct.start();
 	}
 
+	/**
+	 * 多生产/多消费
+	 * 假死
+	 */
+	public static void demo2(){
+		
+	}
 }
