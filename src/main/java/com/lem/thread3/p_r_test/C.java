@@ -23,4 +23,21 @@ public class C {
 			e.printStackTrace();
 		}
 	}
+	
+	public void getValue1(){
+		try {
+			synchronized (lock) {
+				while("".equals(ValueObject.value)){
+					System.out.println("消费者	" + Thread.currentThread().getName()+ "  waiting  ");
+					lock.wait();
+					System.out.println("get值 = "+ValueObject.value );
+				}
+				ValueObject.value = "";
+				lock.notify();
+				System.out.println("消费者	" + Thread.currentThread().getName()+ "  notify  ");
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 }

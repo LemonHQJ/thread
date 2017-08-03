@@ -26,9 +26,21 @@ public class Main {
 
 	/**
 	 * 多生产/多消费
-	 * 假死
+	 * 假死：可能原因是连续唤醒同类；解决：notifyAll不仅唤醒同类，也唤醒异类
 	 */
 	public static void demo2(){
-		
+		String str = new String("");
+		C c = new C(str);
+		P p = new P(str);
+		ThreadP[] tp = new ThreadP[2];
+		ThreadR[] ct = new ThreadR[2];
+		for (int i = 0; i < 2; i++) {
+			tp[i] = new ThreadP(p);
+			ct[i] = new ThreadR(c);
+			tp[i].setName("生产者     " +(i+1) );
+			ct[i].setName("消费者     " +(i+1) );
+			tp[i].start();
+			ct[i].start();
+		}
 	}
 }

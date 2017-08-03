@@ -8,11 +8,21 @@ public class ThreadR extends Thread {
 		this.c = c;
 	}
 	
+//	@Override
+//	public void run() {
+//		super.run();
+//		while(true){
+//			c.getValue();
+//		}
+//	}
+	
+	
+//	demo2
 	@Override
 	public void run() {
 		super.run();
 		while(true){
-			c.getValue();
+			c.getValue1();
 		}
 	}
 }
