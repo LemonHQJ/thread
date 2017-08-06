@@ -4,8 +4,8 @@ public class CThread extends Thread {
 
 	private C1 c1;
 	
-	public CThread(C1 c1){
-		this.c1 = c1;
+	public CThread(C1 c){
+		this.c1 = c;
 	}
 	
 	public void run(){

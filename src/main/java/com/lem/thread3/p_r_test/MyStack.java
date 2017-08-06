@@ -15,6 +15,7 @@ public class MyStack {
 			}
 			list.add("anyString= " + Math.random());
 			this.notify();
+			System.out.println("push  size = " + list.size());
 		} catch (Exception e) {
 		}
 	}
@@ -27,7 +28,9 @@ public class MyStack {
 				this.wait();
 			}
 			returnValue = "" + list.get(0);
-			System.out.println("wait  pop  "+ Thread.currentThread().getName() + "   " + list.size());
+			list.remove(0);
+			this.notify();
+			System.out.println(" pop  size = " + list.size());
 		}catch (Exception e) {
 		}
 		return returnValue;

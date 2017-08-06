@@ -9,6 +9,6 @@ public class C1 {
 	}
 
 	public void popService(){
-		System.out.println("pop= " +myStack.pop());
+		System.out.println("pop size    = " +myStack.pop());
 	}
 }

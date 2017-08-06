@@ -4,7 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 //		demo1();
-		demo2();
+//		demo2();
+		demo3();
 	}
 	
 	
@@ -42,5 +43,29 @@ public class Main {
 			tp[i].start();
 			ct[i].start();
 		}
+	}
+	
+	public static void demo3(){
+		MyStack ms = new MyStack();
+		P1 p = new P1(ms);
+		C1 c = new C1(ms);
+		CThread ct = new CThread(c);
+		PThread pt = new PThread(p);
+		ct.start();
+		pt.start();
+	}
+	
+	
+	/**
+	 * 一生产/多消费
+	 */
+	public static void demo4(){
+		MyStack ms = new MyStack();
+		P1 p = new P1(ms);
+		C1 c = new C1(ms);
+		CThread ct = new CThread(c);
+		PThread pt = new PThread(p);
+		ct.start();
+		pt.start();
 	}
 }
